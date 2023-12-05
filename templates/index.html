@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block title %} Fluffylove {% endblock %} {% block
+content %}
+<div class="container bg-alta p-3 mb-3">
+  <div class="">
+    <a href="/add"><button class="btn btn-primary">Add a pet</button></a>
+  </div>
+</div>
+{% if pets %}
+<div class="row">
+  {% for pet in pets %}
+  <div class="col-sm-6 col-lg-3 mb-1">
+    <div class="">
+      <img
+        class="img-thumbnail"
+        src="{{pet.photo_url}}"
+        alt="{{pet.species}}"
+      />
+      <div class="bg-altlight">
+        <p class="p-1">
+          <strong
+            ><span class="text-success"
+              ><a href="/{{pet.id}}">{{pet.name}}</a></span
+            >
+            is available!</strong
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% else %}
+</div>
+
+<div class="container">
+  <div class="bg-alta">
+    <p class="p-3">Please add some pets...</p>
+  </div>
+</div>
+{% endif %}
+
+<div class="container rounded p-5 mt-4 bg-primary">
+  <div class="col">
+    <p class="text-altlight pt-3 handnote">
+      "The greatness of a nation and its moral progress can be judged by the way
+      its animals are treated." (Mahatma Gandhi) Your compassionate gesture is a
+      testament to the kindness within your heart, and we are truly grateful for
+      your contribution to making the world a better place.
+    </p>
+  </div>
+</div>
+{% endblock %}

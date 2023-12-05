@@ -1,0 +1,38 @@
+// custom varibales at the top
+$primary: #800080;
+$light: #ecfff8;
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Asap:wght@400;500&family=Fjalla+One&family=Inter:wght@200&family=Montserrat:wght@200&family=Pixelify+Sans:wght@400;500;700&family=Press+Start+2P&family=Roboto+Condensed&family=Rubik+Moonrocks&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Fjalla+One&family=Inter:wght@200&family=Montserrat:wght@200&family=Pixelify+Sans:wght@400;500;700&family=Press+Start+2P&family=Roboto+Condensed&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Fjalla+One&family=Inter:wght@200&family=Montserrat:wght@200&family=Pixelify+Sans:wght@400;500;700&family=Press+Start+2P&family=Roboto+Condensed&family=Rubik+Moonrocks&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Asap:wght@400;500&family=Fjalla+One&family=Inter:wght@200&family=Montserrat:wght@200&family=Pixelify+Sans:wght@400;500;700&family=Press+Start+2P&family=Roboto+Condensed&family=Rubik+Moonrocks&family=Supermercado+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Asap:wght@400;500&family=Fjalla+One&family=Inter:wght@200&family=Montserrat:wght@200&family=Pixelify+Sans:wght@400;500;700&family=Press+Start+2P&family=Roboto+Condensed&family=Rubik+Moonrocks&family=Supermercado+One&family=Thasadith&display=swap");
+
+// font family
+$font-family-base: "Asap";
+
+.handnote {
+  font-family: "Thasadith", sans-serif;
+  font-size: larger;
+}
+
+// import the functions first and then variables
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+//make custom colors
+$custom-colors: (
+  "altlight": #ecfff8,
+  "alta": #e3daff,
+  "altdark": #963d5a,
+);
+
+// Then merge the custom map and the original map
+$theme-colors: map-merge($custom-colors, $theme-colors);
+
+// Finally import bootstrap to now use your new custom colors
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

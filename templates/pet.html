@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block title %} Fluffylove {% endblock %} {% block
+content %}
+
+<div class="row justify-content-between">
+  <div class="col">
+    <div class="card bg-alta">
+      <img src="{{pet.photo_url}}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Meet {{pet.name}}.</h5>
+        <p class="card-text">{{pet.notes}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <!-- <li class="list-group-item">Id: {{pet.id}}</li> -->
+        <li class="list-group-item bg-altlight">Age: {{pet.age}}</li>
+        <li class="list-group-item bg-altlight">Specie: {{pet.species}}</li>
+        <li class="list-group-item">
+          <a href="/{{pet.id}}/edit">Edit {{pet.name}}'s details</a>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="/{{pet.species}}" class="card-link">
+          <button class="btn btn-primary">See all {{pet.species}}s</button>
+        </a>
+        <a href="/signup" class="card-link">
+          <button class="btn btn-primary">Adopt now!</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-lg-6">
+    <div class="p-3 ps-0">
+      <h5>You may also be interested in...</h5>
+    </div>
+
+    {% if pets %}
+    <div class="row">
+      {% for pet in pets %}
+      <div class="col-sm-6 mb-1">
+        <div class="">
+          <img
+            class="img-thumbnail"
+            src="{{pet.photo_url}}"
+            alt="{{pet.species}}"
+          />
+          <div class="bg-altlight">
+            <p class="p-1">
+              <strong>
+                <span class="text-success">
+                  <a href="/{{pet.id}}">{{pet.name}}</a>
+                </span>
+                is available!
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="container">
+      <div class="bg-alta">
+        <p class="p-3">Please add some pets...</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

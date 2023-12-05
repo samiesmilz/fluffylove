@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %} Fluffylove {% endblock %} {% block
+content %}
+
+<div class="container mt-4">
+  <form class="row g-3 bg-alta p-4 rounded-1" action="/signup" method="post">
+    <h3 class="bg-altlight rounded-top p-3 bg-primary text-bg-primary">
+      Sign Up For FluffyLove.
+    </h3>
+    <div class="col-12">
+      {{ form.csrf_token }} {{ form.username.label(class="form-label") }} {{
+      form.username(class="form-control") }}
+    </div>
+
+    <div class="col-12">
+      {{form.first_name.label(class="form-label")}}
+      {{form.first_name(class="form-control")}}
+    </div>
+
+    <div class="col-12">
+      {{form.last_name.label(class="form-label")}}
+      {{form.last_name(class="form-control")}}
+    </div>
+
+    <div class="col-12 m-3 ms-0">
+      <button type="submit" class="btn btn-primary">Sign Me Up!</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

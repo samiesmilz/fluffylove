@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block title %} Fluffylove {% endblock %} {% block
+content %}
+
+<div class="container mt-4">
+  <form class="row g-3 bg-alta p-4" action="/add" method="post">
+    <h3 class="bg-altlight p-3 text-altdark">Add a new pet.</h3>
+    <div class="col-12">
+      {{ form.csrf_token }} {{ form.name.label(class="form-label") }} {{
+      form.name(class="form-control") }}
+    </div>
+    <div class="col-12">
+      {{form.species.label(class="form-label")}}
+      {{form.species(class="form-control")}}
+    </div>
+
+    <div class="col-12">
+      {{form.photo_url.label(class="form-label")}}
+      {{form.photo_url(class="form-control")}}
+    </div>
+
+    <div class="col-12">
+      {{form.age.label(class="form-label")}} {{form.age(class="form-control")}}
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        {{ form.available(class="form-check-input", id="available") }} {{
+        form.available.label(class="form-check-label", for="available") }}
+      </div>
+    </div>
+
+    <div class="col-12">
+      {{form.notes.label(class="form-label")}}
+      {{form.notes(class="form-control", rows=8)}}
+    </div>
+
+    <div class="col-12 m-3 ms-0">
+      <button type="submit" class="btn btn-primary">Add pet</button>
+    </div>
+  </form>
+</div>
+
+<div class="bg-altlight mt-2">
+  <p class="p-3">
+    Your decision to add a pet for adoption to our site is not just an act of
+    kindness, but a beacon of hope for those little souls seeking a forever
+    home. Each furball has a unique story to tell, and by offering them a chance
+    at a loving family, you're becoming a crucial part of their journey.
+    Remember, "The greatness of a nation and its moral progress can be judged by
+    the way its animals are treated." (Mahatma Gandhi) Your compassionate
+    gesture is a testament to the kindness within your heart, and we are truly
+    grateful for your contribution to making the world a better place.
+  </p>
+</div>
+{% endblock %}
